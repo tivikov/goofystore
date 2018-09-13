@@ -1,0 +1,475 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #939DA7
+	font-family: Raleway, sans-serif
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+a
+	color: $accent
+	&:hover
+		color: $accent
+
+.head
+	height: auto
+	min-height: 100vh
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	position: relative
+	color: #ffffff
+	&:after
+		content: ""
+		background-image: linear-gradient(rgba(#000,0.75),rgba(#000,0.25))
+		clip-path: polygon(0 0, 100% 0%, 75% 75%, 0% 100%);
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+	// >*
+	// 	position: relative
+	// 	z-index: 2
+	.top-line
+		position: relative
+		height: 16vh
+		z-index: 3
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.logo
+			text-transform: uppercase
+			font-family: Bodoni,sans-serif;
+			font-size: 24px
+			color: #ffffff
+			a
+				color: #ffffff
+			span
+				color: $accent
+		.menu
+			&-item
+				a
+					color: #ffffff
+					text-decoration: none
+					transition: color 0.25s ease
+					&:hover
+						color: $accent
+		&-phone
+			a
+				border: 3px solid #fff
+				display: block
+				border-radius: 10em
+				padding: 12px 20px
+				color: #ffffff
+				transition: 0.25s ease
+				text-decoration: none
+				&:hover
+					color: $accent
+					border-color: $accent	
+		&-mobile-menu
+			position: absolute
+			display: none
+			width: 100%
+			height: 1005
+			margin: 0
+			padding: 0
+			top: 16vh
+			z-index: 1000
+			li
+				list-style-type: none
+				padding: 0
+				a
+					color: #ffffff
+					display: block
+					width: 100%
+					padding: 10px 0
+					text-align: center
+					background-color: $accent
+	&-composition
+		position: relative
+		z-index: 2
+		line-height: 1.1
+		margin-top: 10vh
+		h1
+			font-weight: normal
+			&:after
+				content: attr(data-mark)
+				font-size: 22px
+				position: relative
+				margin-top: 10px
+				color: $accent
+				font-family: Roboto, sans-serif
+				font-weight: 300
+				display: block
+		.big
+			font-size: 56px
+			display: block
+			margin: 0
+			font-family: PTSerif,sans-serif
+		.discount
+			margin: 10px 0
+			font-size: 30px
+		.form-head
+			margin-top: 20px
+			form
+				display: flex
+				justify-content: flex-start
+				>*
+					margin-left: 10px
+				input:not([type=submit])
+					background-color: #ffffff
+					height: 50px
+				input,textarea
+					border: none
+					padding: 0 20px
+					border-radius: 10em
+
+.button
+	border: none
+	outline: none
+	text-align: center
+	height: 50px
+	padding: 0 50px
+	padding-top: 13px
+	padding-bottom: 13px
+	color: #ffffff !important
+	text-decoration: none !important
+	font-size: 14px
+	border-radius: 10em
+	background-color: $accent
+	display: block
+		
+
+.humb
+	span
+		width: 30px
+		height: 3px
+		background-color: #ffffff
+		display: block
+		border-radius: 2px
+		&:not(:last-child)
+			margin-bottom: 5px		
+
+.accent
+	color: $accent
+
+.menu
+	margin: 0
+	padding: 0
+	&-item
+		display: inline-block
+		list-style-type: none
+		margin: 0 15px
+		a
+			display: block
+			font-size: 18px
+
+#why
+	padding: 50px 0
+	.advantages
+		&-item
+			margin-top: 30px
+			&-title
+				text-transform: uppercase
+				font-family: Raleway, sans-serif
+				font-weight: bold
+				color: #303234
+				margin-top: 10px
+				
+.simple-text
+	color: #747e80
+	font-family: $text-font
+
+#clatches
+	padding: 50px 0
+	text-align: center
+	h4
+		font-family: Raleway, sans-serif
+		font-weight: bold
+		font-size: 25px
+	.clatches-item
+		padding: 10px
+		&:hover
+			box-shadow: 0 4px 40px rgba(#000,0.25)
+	.clatches-item-img
+		position: relative
+		&:after
+			content: attr(data-price)
+			position: absolute
+			top: 10px
+			right: 10px
+			display: block
+			height: 90px
+			width: 90px
+			border-radius: 10em
+			font-family: Raleway, sans-serif
+			font-weight: bold
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 24px
+			color: #ffffff
+			background-color: $accent
+		img
+			margin: 0 auto
+
+section.order
+	text-align: center
+	padding: 50px 0
+	color: #ffffff
+	background-color: $dark-bg
+	.send-email
+		background-color: #ffffff
+		border-radius: 2px
+		width: 100%
+		height: 50px
+		text-align: left
+		input
+			border-radius: 2px
+			width: 80%
+			height: 50px
+			padding: 0 10px
+			border: none
+		.button
+			height: 40px
+			width: 19%
+			display: inline-block
+			padding: 0
+			text-align: center
+
+section
+	padding: 50px 0
+	.short-text
+		color: #747e80
+		font-size: 20px
+		font-family: Roboto,sans-serif
+		font-weight: 200
+
+h2
+	line-height: 1.2
+	font-family: Raleway, sans-serif
+	font-weight: 900
+	font-size: 44px
+
+.slick-container
+	margin-top: 30px
+	.slick-item 
+		margin: 10px 0
+	img
+		width: calc(100% - 20px)
+		margin: auto
+
+.slick-next:before, .slick-prev:before
+	font-family: fontawesome
+	font-size: 25px
+	color: $accent
+.slick-next, .slick-prev
+	height: 40px
+	width: 40px
+	border-radius: 100px
+	transition: 0.25s ease
+	border: 2px solid #ddd
+	&:hover
+		border-color: $accent
+
+.slick-next:before
+	content: "\f105"
+.slick-prev:before
+	content: "\f104"
+.slick-next
+	right: -100px
+.slick-prev 
+	left: -100px
+
+.order-steps
+	margin-top: 40px
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	.order-step
+		position: relative
+		text-align: left
+		width: 25%
+		&-count
+			height: 54px
+			width: 54px
+			background-color: $accent
+			display: flex
+			margin: 0 auto
+			font-family: MontserratBold, sans-serif
+			color: #ffffff
+			font-size: 18px
+			border-radius: 10em
+			justify-content: center
+			align-items: center
+			&:after,&:before
+				position: absolute
+				content: ""
+				background-color: #dddddd
+				top: 27px
+				height: 1px
+				width: calc(50% - 27px)
+			&:after
+				right: 0
+			&:before
+				left: 0
+			&.first-child
+				&:before
+					display: none
+			&.last-child
+				&:after
+					display: none
+		h6
+			font-size: 22px
+			margin: 15px 0 0 0
+			padding: 0 10px
+			font-family: PTSerif, sans0-serif
+			font-weight: bold
+		&-desc
+			padding: 0 10px
+
+#testimonials
+	text-align-left
+	.testimonials-image
+		box-shadow: 4px 0 40px rgba(#000, 0.75)
+		img
+			width: 100%
+	.test-short
+		font-family: Roboto, sans-serif
+		font-size: 20px
+		display: block
+		color: #242e38
+	.testimonials-list
+	
+		margin: 0
+		padding: 0
+		list-style: none
+		margin-top: 20px
+		margin-bottom: 20px
+		li
+			color: #666666
+			margin-bottom: 10px
+			font-family: PlayfairDisplay, sans-serif
+			font-size: 16px
+
+#reviews
+	.reviews-wrap
+		margin-top: 30px
+		.reviews-item
+			margin-top: 40px
+			&-face
+				margin: 0 auto
+				overflow: hidden
+				height: 120px
+				width: 120px
+				border-radius: 10em
+				text-align: center
+				img
+					margin: 0 auto
+			&-name
+				font-family: Raleway,sans-serif
+				font-weight: bold
+				font-size: 14px
+				margin: 15px 0
+				letter-spacing: 1.75px
+			&-prof
+				font-family: PlayfairDisplay, sans-serif
+				font-size: 16px
+				color: rgba(#494b4e,0.75)
+				margin-bottom: 10px
+			.reviews-text
+				color: #494b4e
+				line-height: 26px
+
+#contacts
+	.contacts-card
+		padding: 50px
+		box-shadow: 0 4px 40px rgba(#000,0.25)
+	figure
+		figcaption
+			font-family: Raleway,sans-serif
+			font-size: 15px
+			color: #939da7
+		span
+			font-family: Raleway, sans-serif
+			font-weight: 200
+			font-size: 22px
+			color: #242e38
+	.fig
+		font-family: Raleway,sans-serif
+		font-size: 15px
+		color: #939da7
+	form
+		input,textarea
+			width: 100%
+			border: 1px solid #E1E7EC
+			display: block
+			border-radius: 2px
+			margin: 10px 0
+		input
+			height: 60px
+			padding: 0 20px
+		textarea
+			resize: none
+			height: 120px
+			padding: 20px
+
+.foot
+	padding: 50px 0
+	.menu
+		text-align: center
+		&-item
+			a
+				color: #242E38
+				transition: 0.25s ease
+				text-decoration: none
+				font-family: Roboto, sans-serif
+				font-weight: 500
+				&:hover
+					color: $accent
+	#copyright
+		color: #939da7
+		text-align: center
+		margin-top: 25px
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+
+
+@import "media" // Always at the end
